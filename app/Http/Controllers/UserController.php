@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Nette\Utils\Strings;
 
 class UserController extends Controller
 {
@@ -20,7 +21,7 @@ class UserController extends Controller
     }
 
     // Exibe o perfil para edição
-    public function edit(User $user)
+    public function edit(string $id)
     {
         $user = Auth::user(); // Obtém o usuário logado
         return view('perfil.perfil_edit', compact('user'));
@@ -29,7 +30,7 @@ class UserController extends Controller
     /**
      * Atualiza o perfil do usuário.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
         $user = Auth::user(); // Obtém o usuário logado
 
@@ -63,7 +64,7 @@ class UserController extends Controller
     }
 
 
-    public function show()
+    public function show(string $id)
     {
         $profile = auth()->user()->profile; // Usa o relacionamento no modelo
         return view('profile.show', compact('profile'));

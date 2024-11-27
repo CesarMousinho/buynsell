@@ -86,11 +86,13 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/perfil/create', [UserController::class, 'create'])->name('perfil.create');
 
-    Route::get('/perfil/{user}', [UserController::class, 'show'])->name('perfil.show');
+    Route::get('/perfil/{id}', [UserController::class, 'show'])->name('perfil.show');
 
-    Route::put('/perfil/{user}', [UserController::class, 'update'])->name('perfil.update');
+    Route::get('/perfil/{id}/edit', [UserController::class, 'edit'])->name('perfil.edit');
 
-    Route::delete('/perfil/{user}', [UserController::class, 'destroy'])->name('perfil.destroy');
+    Route::put('/perfil/{id}', [UserController::class, 'update'])->name('perfil.update');
+
+    Route::delete('/perfil/{id}', [UserController::class, 'destroy'])->name('perfil.destroy');
 
 
     //--------------------PERFIL---------------------------\\
