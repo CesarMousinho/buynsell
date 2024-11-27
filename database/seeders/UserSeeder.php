@@ -20,18 +20,22 @@ class UserSeeder extends Seeder
             'email' => 'cmn@cmn.com',
             'password' => Hash::make('123456789'),
             'perfil' => 'admin',
+            'dob' => null,
         ]);
         DB::table('users')->insert([
             'name' => 'Brandon A',
             'email' => 'bar@bar.com',
             'password' => Hash::make('123456789'),
             'perfil' => 'padrao',
+            'dob' => null,
         ]);
         DB::table('users')->insert([
             'name' => 'André Neves',
             'email' => 'andr@andr.com',
             'password' => Hash::make('123456789'),
             'perfil' => 'padrao',
+            'dob' => null,
+
         ]);
     }
 }
